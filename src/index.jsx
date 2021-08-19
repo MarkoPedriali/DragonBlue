@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './componentes/main/Main'
+import Main from './paginas/main/Main'
 
 
 ReactDOM.render(
