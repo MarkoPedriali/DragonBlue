@@ -3,6 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div `
     max-width:80%;
     margin: 0 auto;
-    background-color: aquamarine;
+    
 `;
 //template string - pesquisar

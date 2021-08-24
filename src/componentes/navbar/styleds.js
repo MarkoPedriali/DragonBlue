@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export const Navbar = styled.div `
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    background-color: #e76a24;
+    background-image: url('https://i1.wp.com/www.nerdsite.com.br/wp-content/uploads/2019/01/dbz.jpg?fit=711%2C400&ssl=1');
+    background-size: cover;
+    
+    //background-color: #e76a24;
     -webkit-box-shadow: 7px 7px 24px 3px rgba(0,0,0,0.61); 
     box-shadow: 7px 7px 24px 3px rgba(0,0,0,0.61);
     padding: 0 2rem;
@@ -15,6 +18,7 @@ export const Navbar = styled.div `
         align-items: center;
     }
 `;
+
 
 export const Img = styled.img `
     width: 10rem;

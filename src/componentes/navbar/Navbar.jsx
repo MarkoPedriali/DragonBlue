@@ -1,10 +1,14 @@
+import { Link } from 'react-router-dom';
 import logo from './logo.png';
 import * as S from './styleds';
 
 export default function Navbar(){
     return(
         <S.Navbar>
-            <S.Img src={logo} alt="Dragon Ball"/>
+          
+            <Link to="/">
+                <S.Img src={logo} alt="Dragon Ball"/>
+            </Link>
             <S.List>
                 <S.ListItem>
                     <S.LinkedPage to="/">Início</S.LinkedPage>
@@ -19,6 +23,7 @@ export default function Navbar(){
                     <S.LinkedPage to="/sobre">Sobre</S.LinkedPage>
                 </S.ListItem>
             </S.List>
+           
         </S.Navbar>
     )
 }
