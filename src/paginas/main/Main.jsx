@@ -12,6 +12,8 @@ import { GlobalStyles } from '../../componentes/globalStyles/styledGl';
 import { lighTheme, darkTheme } from '../../componentes/theme/styled';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import DeletarUm from '../deletarUm/DeletarUm';
+import UpdateUm from '../updateUm/UpdateUm';
 
 export default function Main(){
 
@@ -29,13 +31,15 @@ export default function Main(){
         <BrowserRouter>
             <Navbar/>
             <Container> 
-                <switch>
+                <Switch>
                     <Route exact={true} path="/" component={Ler}></Route>
                     <Route path="/criar" component={Criar}></Route>
                     <Route path="/deletar" component={Deletar}></Route>
                     <Route path="/sobre" component={Sobre}></Route>
                     <Route path="/view/:id" component={LerUm}></Route>
-                </switch>
+                    <Route path="/delete/:id" component={DeletarUm}></Route>
+                    <Route path="/update/:id" component={UpdateUm}></Route>
+                </Switch>
                 <BotaoTema onClick={themeToggler} className="im im-light-bulb"></BotaoTema>
             </Container>
         </BrowserRouter>

@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import * as S from './styledC'
+import * as S from './styledU';
+import { useState } from 'react';
 import { Titulo } from '../../componentes/titulo/styledT';
 import { Api } from '../../api/Api';
 import { useHistory } from 'react-router-dom';
 
-export default function Criar(){
+export default function UpdateUm(){
 
     const [nome, setNome] =useState('');
     const [url, setUrl] =useState('');
@@ -36,20 +36,18 @@ export default function Criar(){
                                         //o result(é o json vindo do request) é passado como props para O LerUm.
     } 
 
-    console.log(item)
-
     return(
        <>
        <Titulo>Criar novo personagem</Titulo>
         <S.Form onSubmit={submitHandler}>
             <S.Label htmlFor="nome">Nome do personagem: </S.Label>
-            <S.Input type="text"  id="nome" name="nome" onChange={ e => setNome(e.target.value) } required></S.Input><br></br>
+            <S.Input type="text"  id="nome" name="nome" value={item.nome} onChange={ e => setNome(e.target.value) } required></S.Input><br></br>
 
             <S.Label htmlFor="url_imagem">URL da imagem: </S.Label>
-            <S.Input type ="text" id="url_imagem" nome="url_imagem" onChange={ e => setUrl(e.target.value) } required></S.Input><br></br>
+            <S.Input type ="text" id="url_imagem" nome="url_imagem" value={item.url} onChange={ e => setUrl(e.target.value) } required></S.Input><br></br>
 
             <S.Label htmlFor="raca">Raça do personagem: </S.Label>
-            <S.Select id="raca" name="raca"onChange={ e => setRaca(e.target.value) } required>
+            <S.Select id="raca" name="raca" value={item.raca} onChange={ e => setRaca(e.target.value) } required>
                 <S.Option value="Androide">Androide</S.Option>
                 <S.Option value="Animal">Animal</S.Option>
                 <S.Option value="Dragão">Dragão</S.Option>
@@ -60,7 +58,7 @@ export default function Criar(){
             </S.Select><br></br>
 
             <S.Label htmlFor="saga">Saga em que aparece: </S.Label>
-            <S.Select id="saga" name="saga" onChange={ e => setSaga(e.target.value) } required>
+            <S.Select id="saga" name="saga" value={item.saga} onChange={ e => setSaga(e.target.value) } required>
                 <S.Option value="Saiyajins">Saiyajins</S.Option>
                 <S.Option value="Freeza">Freeza</S.Option>
                 <S.Option value="Garlic">Garlic</S.Option>
@@ -72,9 +70,9 @@ export default function Criar(){
             </S.Select><br></br>
 
             <S.Label htmlFor="forca">Poder de luta: </S.Label>
-            <S.Input type="number" id="forca" name="forca" min="0" max="100"onChange={ e => setForca(e.target.value) } required></S.Input><br></br>
+            <S.Input type="number" id="forca" name="forca" min="0" max="100" value={item.forca} onChange={ e => setForca(e.target.value) } required></S.Input><br></br>
 
-            <S.Input type="submit" value="Cadastrar"></S.Input>
+            <S.Input type="submit" value="Alterar"></S.Input>
         </S.Form>
         </>
     )
