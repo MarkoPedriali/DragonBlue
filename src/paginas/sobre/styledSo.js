@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Texto = styled.div`
-    width: 60%;
-    border-style: solid;
+    width: 100%;
+    //border-style: solid;
     justify-self: center;
     text-align: justify;
 `;

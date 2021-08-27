@@ -9,7 +9,9 @@ export default function Sobre() {
       <Titulo>Sobre</Titulo>
       <S.Texto>
       <Paragrafo>
-        Esse projeto tem como objetivo 
+        Esse projeto tem como objetivo implementar uma aplicação web Front-end com integração ao 
+        banco de dados, requisitando ao banco métodos POST, GET, DELETE e PUT, passando por todas
+        as fases do CRUD. 
       </Paragrafo>
 
       <Paragrafo>
@@ -22,10 +24,6 @@ export default function Sobre() {
         <S.Img src={perfil}></S.Img>
       </S.ImgCard>
 
-      <Paragrafo>
-        Redes sociais: 
-      </Paragrafo>
-
       <S.SocialBlock>
         <a
           href="https://github.com/MarkoPedriali"
@@ -33,13 +31,6 @@ export default function Sobre() {
           rel="noopener noreferrer"
         >
           <i className="im im-github"></i>
-        </a>
-        <a
-          href="https://open.spotify.com/user/n1dqwfofokv86pd8lgh6jcro0?si=a2da442b4f9f42de"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="im im-spotify"></i>
         </a>
         <a
           href="https://www.linkedin.com/in/marko-pedriali/"
