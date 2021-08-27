@@ -18,7 +18,7 @@ import Error from '../error/Error';
 
 export default function Main(){
 
-    const [tema, setTema] = useState('light');
+    const [tema, setTema] = useState('dark');
 
     const themeToggler = () => {
         tema === 'light' ? setTema('dark') : setTema('light')

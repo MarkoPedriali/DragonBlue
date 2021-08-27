@@ -11,7 +11,7 @@ export const Navbar = styled.div `
     //background-color: #e76a24;
     -webkit-box-shadow: 7px 7px 24px 3px rgba(0,0,0,0.61); 
     box-shadow: 7px 7px 24px 3px rgba(0,0,0,0.61);
-    padding: 0 2rem;
+    
 
     @media(max-width: 580px){
         flex-direction: column;
@@ -19,6 +19,18 @@ export const Navbar = styled.div `
     }
 `;
 
+export const Transparencia = styled.div `
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+    background-color :rgba(19, 18, 18, 0.671);
+    padding: 0 2rem;
+
+    @media(max-width: 580px){
+        flex-direction: column;
+        align-items: center;
+    }
+`;
 
 export const Img = styled.img `
     width: 10rem;
@@ -38,16 +50,18 @@ export const List = styled.ul `
 
 export const ListItem = styled.li `
     list-style: none;
-    padding: 1.2rem 1rem;
+    padding: 1.5rem 1rem;
     @media(max-width: 430px){
         flex-direction: column;
     }
 
     &:hover{
-        background-color: #b15019;
+        background-color :rgba(19, 18, 18, 0.671);
     }
 `;
 
 export const LinkedPage =styled(Link) `
     text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3em;
 `;

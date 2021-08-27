@@ -13,7 +13,7 @@ export const CardArea = styled.div `
 
 
     &:hover{
-        margin: 0.8rem;
+        transform: rotate(3deg);
     }
 `;
 
@@ -21,6 +21,7 @@ export const CardImg = styled.img `
     max-width: 15rem;
     height: 18rem;
     object-fit: cover;
+    
 `;
 
 export const Nome = styled.h3 `

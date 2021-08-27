@@ -5,6 +5,7 @@ import * as S from './styleds';
 export default function Navbar(){
     return(
         <S.Navbar>
+            <S.Transparencia>
           
             <Link to="/">
                 <S.Img src={logo} alt="Dragon Ball"/>
@@ -23,7 +24,7 @@ export default function Navbar(){
                     <S.LinkedPage to="/sobre">Sobre</S.LinkedPage>
                 </S.ListItem>
             </S.List>
-           
+            </S.Transparencia> 
         </S.Navbar>
     )
 }

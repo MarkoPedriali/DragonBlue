@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Loading from '../../componentes/loading/Loading';
 
 export default function UpdateUm(props){
-    console.log(props)
+    
     const state = props.location.state;
 
     const [nome, setNome] =useState(state.name);
@@ -27,7 +27,7 @@ export default function UpdateUm(props){
         forca: forca
     }
 
-
+    console.log(item.nome)
 
     const submitHandler = async event => { //funcao para lidar com os submits
         setLoading(true);
@@ -50,6 +50,7 @@ export default function UpdateUm(props){
            loading ===true ? <Loading/> :
         <>
        <Titulo>Atualizar personagem</Titulo>
+       <S.Criar>
         <S.Form onSubmit={submitHandler}>
             <S.Label htmlFor="nome">Nome do personagem: </S.Label>
             <S.Input type="text"  id="nome" name="nome" value={item.nome} onChange={ e => setNome(e.target.value) } required></S.Input><br></br>
@@ -85,6 +86,7 @@ export default function UpdateUm(props){
 
             <S.Input type="submit" value="Alterar"></S.Input>
         </S.Form>
+        </S.Criar>
         </>
         }
         </>

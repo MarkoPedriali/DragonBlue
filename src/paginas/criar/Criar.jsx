@@ -41,7 +41,9 @@ export default function Criar(){
     return(
        <>
        <Titulo>Criar novo personagem</Titulo>
+       <S.Criar>
         <S.Form onSubmit={submitHandler}>
+            
             <S.Label htmlFor="nome">Nome do personagem: </S.Label>
             <S.Input type="text"  id="nome" name="nome" onChange={ e => setNome(e.target.value) } required></S.Input><br></br>
 
@@ -74,8 +76,9 @@ export default function Criar(){
             <S.Label htmlFor="forca">Poder de luta: </S.Label>
             <S.Input type="number" id="forca" name="forca" min="0" max="100"onChange={ e => setForca(e.target.value) } required></S.Input><br></br>
 
-            <S.Input type="submit" value="Cadastrar"></S.Input>
+            <S.Input type="submit" id="submit" value="Cadastrar"></S.Input>
         </S.Form>
+        </S.Criar>
         </>
     )
 }
