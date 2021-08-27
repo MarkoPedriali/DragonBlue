@@ -3,14 +3,19 @@ import { useState } from 'react';
 import { Titulo } from '../../componentes/titulo/styledT';
 import { Api } from '../../api/Api';
 import { useHistory } from 'react-router-dom';
+import Loading from '../../componentes/loading/Loading';
 
-export default function UpdateUm(){
+export default function UpdateUm(props){
+    console.log(props)
+    const state = props.location.state;
 
-    const [nome, setNome] =useState('');
-    const [url, setUrl] =useState('');
-    const [raca, setRaca] =useState('');
-    const [saga, setSaga] =useState('');
-    const [forca, setForca] =useState(0);
+    const [nome, setNome] =useState(state.name);
+    const [url, setUrl] =useState(state.url);
+    const [raca, setRaca] =useState(state.raca);
+    const [saga, setSaga] =useState(state.saga);
+    const [forca, setForca] =useState(state.forca);
+
+    const [loading, setLoading] = useState(false);
 
     const history = useHistory();
 
@@ -22,23 +27,29 @@ export default function UpdateUm(){
         forca: forca
     }
 
+
+
     const submitHandler = async event => { //funcao para lidar com os submits
+        setLoading(true);
         event.preventDefault(); //função para que ao submeter um form, a página nao seja atualizada
 
-        const request = await Api.buildApiPostRequest(Api.createUrl(), item).catch(e => {
-            console.error('Erro ao tentar adicionar o item ao banco: ', e);
+        const request = await Api.buildApiPutRequest(Api.updateUrl(state._id), item).catch(e => {
+            console.error('Erro ao tentar atualizar o item ao banco: ', e);
         })
 
         const result = await request.json();
-        const id = result._id; //o id vindo com o underline vem do insomnia
+        const id = result._id; 
         
-        history.push(`/view/${id}`, result);// aqui, empurrei a rota para a view id, que no caso é a pagina LerUm. Defini isso na Main, pondo a rota de view puxando o componente LerUm. 
-                                        //o result(é o json vindo do request) é passado como props para O LerUm.
+        history.push(`/view/${id}`, item); 
+                                        
     } 
 
     return(
        <>
-       <Titulo>Criar novo personagem</Titulo>
+       {
+           loading ===true ? <Loading/> :
+        <>
+       <Titulo>Atualizar personagem</Titulo>
         <S.Form onSubmit={submitHandler}>
             <S.Label htmlFor="nome">Nome do personagem: </S.Label>
             <S.Input type="text"  id="nome" name="nome" value={item.nome} onChange={ e => setNome(e.target.value) } required></S.Input><br></br>
@@ -74,6 +85,8 @@ export default function UpdateUm(){
 
             <S.Input type="submit" value="Alterar"></S.Input>
         </S.Form>
+        </>
+        }
         </>
     )
 }

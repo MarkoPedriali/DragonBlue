@@ -3,9 +3,12 @@ export const Api = {
     authorization: 'marko.pedriali@hotmail.com',
 
     readAllUrl: () => Api.baseUrl + '/',
+    readoneUrl: (id) => Api.baseUrl + '/' +id,
     createUrl: () =>Api.baseUrl + '/',
     deleteAllUrl: () =>Api.baseUrl + '/',
-    deleteUrl: id => Api.baseUrl + '/' + id,
+    deleteUrl: (id) => Api.baseUrl + '/' + id,
+    updateUrl: (id) => Api.baseUrl + '/' + id,
+
 
     //para pergartudo
 
@@ -17,7 +20,7 @@ export const Api = {
             }),
         })
     },
-
+    // para criar (postar) dados
     buildApiPostRequest: (url ,body) =>{
         return fetch(url, {
             method: 'POST',
@@ -38,6 +41,18 @@ export const Api = {
                 Authorization: Api.authorization
             })
             
+        })
+    },
+        // put para alterar
+    buildApiPutRequest: (url, body) =>{
+        return fetch(url, {
+           method: 'PUT',
+           headers: new Headers({
+               Authorization: Api.authorization,
+               'Content-type': 'application/json'
+           }),
+           body: JSON.stringify(body) //transfoma o Json numa string para o beckand
+
         })
     }
 }

@@ -6,10 +6,12 @@ export const CardAread= styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
 `;  
 
 export const Linked= styled(Link)`
     text-decoration: none;
+    
 `;  
 
 export const Vazio= styled.h3`

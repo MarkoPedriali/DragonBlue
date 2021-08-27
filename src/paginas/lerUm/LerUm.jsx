@@ -2,6 +2,8 @@ import { Titulo } from "../../componentes/titulo/styledT";
 import * as LU from './styledLU';
 import Power from "../../componentes/power/Power";
 import { useHistory } from "react-router";
+import Loading from "../../componentes/loading/Loading";
+import { useState } from "react";
 
 export default function LerUm(props){  //props vem da Criar.
 
@@ -14,6 +16,13 @@ export default function LerUm(props){  //props vem da Criar.
         event.preventDefault();
         history.push(`/delete/${item._id}`, item);
     };
+
+    const editHandler = async event => {
+        event.preventDefault();
+        history.push(`/update/${item._id}`, item);
+    };
+
+
 
     return(
         <>
@@ -31,7 +40,7 @@ export default function LerUm(props){  //props vem da Criar.
             <LU.Texto><strong>Saga: {item.saga}</strong></LU.Texto>
 
             <LU.AreaBotao>
-                <LU.BEditar>Editar</LU.BEditar>
+                <LU.BEditar onClick={editHandler}>Editar</LU.BEditar>
                 <LU.BDeletar onClick={deleteHandler}>Deletar</LU.BDeletar>
             </LU.AreaBotao>
         </LU.Card>

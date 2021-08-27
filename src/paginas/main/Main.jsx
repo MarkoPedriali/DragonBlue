@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import DeletarUm from '../deletarUm/DeletarUm';
 import UpdateUm from '../updateUm/UpdateUm';
+import Error from '../error/Error';
 
 export default function Main(){
 
@@ -39,6 +40,7 @@ export default function Main(){
                     <Route path="/view/:id" component={LerUm}></Route>
                     <Route path="/delete/:id" component={DeletarUm}></Route>
                     <Route path="/update/:id" component={UpdateUm}></Route>
+                    <Route component={Error}></Route>
                 </Switch>
                 <BotaoTema onClick={themeToggler} className="im im-light-bulb"></BotaoTema>
             </Container>

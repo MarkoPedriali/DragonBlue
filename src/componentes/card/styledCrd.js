@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const CardArea = styled.div `
     background-color: #ffffff;
     padding: 1rem;
+    border-style: solid;
     border-radius: 0.5rem;
     margin: 0.5rem;
     cursor: pointer;
     transition: 200ms;
     height: 23rem;
     overflow: hidden;
+
 
     &:hover{
         margin: 0.8rem;
